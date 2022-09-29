@@ -1,3 +1,12 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -7,6 +16,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+*.idea
 .Python
 build/
 develop-eggs/
@@ -128,9 +138,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-
-*.xml
-*.iml
-
-
-
+# pycharm workspace
+ workspace.xml
+ *.xml
+ *.iml
