@@ -1,4 +1,0 @@
-# copyright Dennis and Daniel
-
-
-
