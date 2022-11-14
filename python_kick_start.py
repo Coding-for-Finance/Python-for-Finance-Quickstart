@@ -101,5 +101,15 @@ for lookback in l_lookbacks:
 dict_MA['MA_240_days'].plot()
 plt.show()
 
+# let us now loop through the dictionary itself, doing some inspection of each element
+#  .keys() method of a dictionary returns names of the elements we can loop through
+#   At the same time, we want to loop through the lookback list to get 2 variables returned
+#   in a single loop iteration
+
+# for two or more variable loop, use "zip" function
+for element, lookback in zip(dict_MA.keys(), l_lookbacks):
+    print(f" Dataframe of moving averages of length of {lookback} is described as follows:")
+    print(dict_MA[element].describe())
+
 
 
