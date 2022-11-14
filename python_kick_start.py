@@ -12,6 +12,8 @@ raw_prices = pd.read_excel('spy_nasdaq_prices.xlsx', header=0)
 first_date = raw_prices.iloc[0,0]
 # use index locator (iloc) of -1 (last entry) to see what last date is
 last_date = raw_prices.iloc[-1,0]
+last_date
+
 
 # make a quick check whether data is in the right order
 if first_date < last_date:
@@ -81,5 +83,23 @@ df_all = pd.concat([df_prices_cut, df_MAs], axis= 1)
 df_all.plot(style = ['-','-','--','--']) # make prices a solid and MAs a dashed line
 plt.title(f'Prices and {MA_days}-Days Moving Averages of the Indices ')
 plt.show()
+
+# %% Creating a dictionary
+
+# create empty dictionary
+dict_MA = dict()
+
+# create a list of all lookbacks we want to calculate
+l_lookbacks = [60,120,240]
+
+for lookback in l_lookbacks:
+    print(lookback)
+    # we can save any object into a dictionary while naming it dynamically in the loop
+    dict_MA['MA_' + str(lookback) + '_days'] = df_prices_cut.rolling(lookback).mean()
+
+# let's plot only the moving averages of 240 lookback calling it statically
+dict_MA['MA_240_days'].plot()
+plt.show()
+
 
 
